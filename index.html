@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Pooling Services — Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #0F6E56;
+    --teal-light: #E1F5EE;
+    --teal-mid: #1D9E75;
+    --teal-dark: #085041;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --amber-mid: #EF9F27;
+    --gray-50: #F8F7F4;
+    --gray-100: #EEECE7;
+    --gray-300: #B4B2A9;
+    --gray-700: #3C3C3A;
+    --gray-900: #1A1A18;
+    --white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-900);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--teal-dark);
+    color: var(--white);
+    padding: 72px 56px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-circle at 80% 20%,
+      rgba(29, 158, 117, 0.35) 0%,
+      transparent 55%;
+    background: radial-gradient(ellipse at 85% 15%, rgba(29,158,117,0.4) 0%, transparent 55%),
+                radial-gradient(ellipse at 10% 90%, rgba(15,110,86,0.5) 0%, transparent 45%);
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9FE1CB;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1.5px;
+    background: #9FE1CB;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 66px);
+    line-height: 1.08;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #5DCAA5;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.72);
+    max-width: 420px;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+  }
+
+  .badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .launch-badge {
+    background: var(--amber-mid);
+    border-color: var(--amber-mid);
+    color: #fff;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    padding: 56px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-mid);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--gray-900);
+    margin-bottom: 32px;
+    line-height: 1.2;
+  }
+
+  /* ── STOPS ── */
+  .stops-section {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .stops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  .stop-card {
+    background: var(--teal-light);
+    border: 1px solid rgba(29,158,117,0.2);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .stop-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--teal-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+  }
+
+  .stop-icon svg {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .stop-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* ── TIMING ── */
+  .timing-section {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .timing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .timing-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 16px;
+    padding: 28px 24px;
+  }
+
+  .timing-card .time-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--gray-300);
+    margin-bottom: 6px;
+  }
+
+  .timing-card .time-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .timing-card .time-desc {
+    font-size: 13px;
+    color: var(--gray-700);
+  }
+
+  .timing-note {
+    margin-top: 20px;
+    background: var(--amber-light);
+    border: 1px solid rgba(186,117,23,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #63380A;
+    line-height: 1.6;
+  }
+
+  /* ── FARE TABLE ── */
+  .fare-section {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--gray-100);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 580px;
+  }
+
+  table thead th {
+    background: var(--teal-dark);
+    color: #9FE1CB;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  table thead th:first-child {
+    text-align: left;
+    border-radius: 11px 0 0 0;
+  }
+
+  table thead th:last-child {
+    border-radius: 0 11px 0 0;
+  }
+
+  table tbody tr:nth-child(even) td {
+    background: var(--gray-50);
+  }
+
+  table tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--gray-100);
+    text-align: center;
+    color: var(--gray-700);
+  }
+
+  table tbody td:first-child {
+    font-weight: 600;
+    color: var(--teal-dark);
+    text-align: left;
+  }
+
+  table tbody td.na {
+    color: var(--gray-300);
+  }
+
+  table tbody td.fare {
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  /* ── EXAMPLES ── */
+  .examples-section {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .example-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .example-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+
+  .example-card .scenario {
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .fares-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .fare-pill {
+    background: var(--teal-light);
+    border: 1px solid rgba(29,158,117,0.2);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* ── BILLING ── */
+  .billing-section {
+    background: var(--teal-dark);
+    color: var(--white);
+    padding: 56px;
+  }
+
+  .billing-section .section-label {
+    color: #9FE1CB;
+  }
+
+  .billing-section .section-title {
+    color: var(--white);
+  }
+
+  .billing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .bill-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 14px;
+    padding: 22px 20px;
+  }
+
+  .bill-item .bill-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .bill-item .bill-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9FE1CB;
+    margin-bottom: 4px;
+  }
+
+  .bill-item .bill-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--gray-900);
+    color: rgba(255,255,255,0.5);
+    padding: 28px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer strong {
+    color: rgba(255,255,255,0.8);
+  }
+
+  @media (max-width: 620px) {
+    .hero, .section, .billing-section { padding: 40px 24px; }
+    .timing-grid { grid-template-columns: 1fr; }
+    .footer { padding: 24px; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  
+  <h1>Ride Together,<br><em>Save Together</em></h1>
+ 
+    
+    <span class="badge">✓ GST-inclusive fares</span>
+    <span class="badge">✓ Proportionate fare splitting</span>
+    <span class="badge">✓ Monthly UPI billing</span>
+  </div>
+</div>
+
+<!-- PICK-UP & DROP POINTS -->
+<div class="section stops-section">
+  
+  <div class="section-title">Pick-up &amp; Drop Points</div>
+  <div class="stops-grid">
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">Mayuresh Park</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">Palladium Heights</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">Dreams Mall</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">Kanjurmarg</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">SOM</div>
+    </div>
+    <div class="stop-card">
+      <div class="stop-icon">
+        <svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="8" r="3"/><path d="M10 2C6.69 2 4 4.69 4 8c0 5 6 10 6 10s6-5 6-10c0-3.31-2.69-6-6-6z"/></svg>
+      </div>
+      <div class="stop-name">Research Park</div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMINGS -->
+<div class="section timing-section">
+  <div class="section-label">Schedule</div>
+  <div class="section-title">Flexible Departure Slots</div>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="time-label">Morning</div>
+      <div class="time-value">8:00 – 8:45 AM</div>
+      <div class="time-desc">Leaving from your location. Coordinated via WhatsApp group. Latest departure at 8:45 AM.</div>
+    </div>
+    <div class="timing-card">
+      <div class="time-label">Evening</div>
+      <div class="time-value">6:00 – 6:30 PM</div>
+      <div class="time-desc">Leaving from IITB. Coordinated via WhatsApp group. Latest departure at 6:30 PM.</div>
+    </div>
+  </div>
+  <div class="timing-note">
+    ⚡ Since this is a paid service, departure timings are relaxed within the above slots, as mutually agreed by all travellers in the group.
+  </div>
+</div>
+
+<!-- FARE TABLE -->
+<div class="section fare-section">
+  <div class="section-label">Pricing</div>
+  <div class="section-title">Fare Matrix as calculated for Single Pax </div>
+  <p style="font-size:13px; color:#5F5E5A; margin-bottom:20px;">Fares in ₹ as per M-Indicator AC Cab chart. If two or more persons share, fare is split proportionately.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>From ↓ / To →</th>
+          <th>SOM</th>
+          <th>Kanjurmarg</th>
+          <th>Dreams Mall</th>
+          <th>Palladium Hts</th>
+          <th>Mayuresh Park</th>
+          <th>Research Park</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SOM</td>
+          <td class="na">—</td>
+          <td class="fare">₹104</td>
+          <td class="fare">₹178</td>
+          <td class="fare">₹215</td>
+          <td class="fare">₹241</td>
+          <td class="fare">₹48</td>
+        </tr>
+        <tr>
+          <td>Kanjurmarg</td>
+          <td class="fare">₹104</td>
+          <td class="na">—</td>
+          <td class="fare">₹78</td>
+          <td class="fare">₹104</td>
+          <td class="fare">₹141</td>
+          <td class="fare">₹148</td>
+        </tr>
+        <tr>
+          <td>Dreams Mall</td>
+          <td class="fare">₹178</td>
+          <td class="fare">₹78</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="fare">₹55</td>
+          <td class="fare">₹230</td>
+        </tr>
+        <tr>
+          <td>Palladium Heights</td>
+          <td class="fare">₹215</td>
+          <td class="fare">₹104</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="fare">₹48</td>
+          <td class="fare">₹260</td>
+        </tr>
+        <tr>
+          <td>Mayuresh Park</td>
+          <td class="fare">₹241</td>
+          <td class="fare">₹141</td>
+          <td class="fare">₹55</td>
+          <td class="fare">₹48</td>
+          <td class="na">—</td>
+          <td class="fare">₹327</td>
+        </tr>
+        <tr>
+          <td>Research Park</td>
+          <td class="fare">₹48</td>
+          <td class="fare">₹148</td>
+          <td class="fare">₹230</td>
+          <td class="fare">₹260</td>
+          <td class="fare">₹327</td>
+          <td class="na">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EXAMPLES -->
+<div class="section examples-section">
+  <div class="section-label">Fare Splitting Examples</div>
+  <div class="section-title">See How Sharing Works</div>
+  <div class="example-cards">
+
+    <div class="example-card">
+      <div class="scenario">
+        <strong>Solo ride:</strong> A travels from SOM → Dreams Mall with no one sharing.
+      </div>
+      <div class="fares-row">
+        <span class="fare-pill">A pays ₹178</span>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="scenario">
+        <strong>Three-way share:</strong> A travels SOM → Dreams Mall · B travels Research Park → Palladium Heights · C travels SOM → Kanjurmarg.
+      </div>
+      <div class="fares-row">
+        <span class="fare-pill">A pays ₹86</span>
+        <span class="fare-pill">B pays ₹123</span>
+        <span class="fare-pill">C pays ₹51</span>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="scenario">
+        <strong>Two-way share:</strong> A travels Mayuresh Park → SOM · B travels Kanjurmarg → SOM.
+      </div>
+      <div class="fares-row">
+        <span class="fare-pill">A pays ₹166</span>
+        <span class="fare-pill">B pays ₹75</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BILLING & PROCESS -->
+<div class="billing-section">
+  <div class="section-label">Billing &amp; Process</div>
+  <div class="section-title">Simple, Transparent Payments</div>
+  <div class="billing-grid">
+    <div class="bill-item">
+      <div class="bill-icon">📊</div>
+      <div class="bill-title">Live Dashboard</div>
+      <div class="bill-desc">After each trip, your kilometres and applicable fare are updated on your personalised Car Pooling Dashboard.</div>
+    </div>
+    <div class="bill-item">
+      <div class="bill-icon">🧾</div>
+      <div class="bill-title">Monthly GST Invoice</div>
+      <div class="bill-desc">Invoices are generated on the 1st of every month, calculated based on your actual days of usage.</div>
+    </div>
+    <div class="bill-item">
+      <div class="bill-icon">📱</div>
+      <div class="bill-title">UPI Payment Only</div>
+      <div class="bill-desc">Payments are made exclusively via UPI — fast, secure, and paperless.</div>
+    </div>
+    <div class="bill-item">
+      <div class="bill-icon">🏛️</div>
+      <div class="bill-title">GST-Inclusive</div>
+      <div class="bill-desc">All fares are inclusive of GST. Proper GST invoices are generated every month for your records.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div><strong>Car Pooling Services</strong>
+  <div>Effective from <strong>8 June 2026</strong> · Fares per M-Indicator AC Cab chart · All fares include GST</div>
+</div>
+
+</body>
+</html>
